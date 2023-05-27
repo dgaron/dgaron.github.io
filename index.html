@@ -43,8 +43,8 @@ int main() {
 		curr.fill_out_despite_providing_resume();
 		try {
 			employed = curr.submit();
-		} catch (const system_error &e) {
-			std::cerr &lt;&lt; e &lt;&lt; '\n';
+		} catch (const std::system_error &e) {
+			std::cerr &lt;&lt; e.what() &lt;&lt; '\n';
 			continue;
 		}
 	}
