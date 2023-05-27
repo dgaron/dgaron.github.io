@@ -29,17 +29,24 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<span class="image right"><img src="images/zarzir.jpg" alt="" ></span>
 							<h1>Daniel Garon</h1>
 							<p>I am a computer scientist interested in software development, problem-solving, 
 								and high-performance computing.</p>
-							<pre><code>#include "Job_Application.h"
+							<span class="image right"><img src="images/zarzir.jpg" alt="" ></span>
+							<pre><code>#include &lt;iostream&gt;
+#include &lt;system_error&gt;
+#include "Job_Application.h"
 int main() {
 	bool employed = false;
 	while (!employed) {
 		Job_Application curr;
 		curr.fill_out_despite_providing_resume();
-		employed = curr.submit();
+		try {
+			employed = curr.submit();
+		} catch (const system_error &e) {
+			std::cerr &lt;&lt; e &lt;&lt; '\n';
+			continue;
+		}
 	}
 	return 0;
 }</code></pre>
@@ -109,7 +116,7 @@ int main() {
 								<section>
 									<span class="icon solid major fa-ghost"></span>
 									<h3>Other Skills</h3>
-									<p>I am an experienced and self-reliant problem-solver</p>
+									<p>I am an experienced and self-reliant problem-solver.</p>
 								</section>
 							</div>
 							<ul class="actions">
