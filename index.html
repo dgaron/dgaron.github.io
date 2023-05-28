@@ -37,18 +37,18 @@
 #include &lt;system_error&gt;
 #include "Job_Application.h"
 int main() {
-	bool employed = false;
-	while (!employed) {
-		Job_Application curr;
-		curr.fill_out_despite_providing_resume();
-		try {
-			employed = curr.submit();
-		} catch (const std::system_error &e) {
-			std::cerr &lt;&lt; e.what() &lt;&lt; '\n';
-			continue;
-		}
-	}
-	return 0;
+    bool employed = false;
+    while (!employed) {
+        Job_Application curr;
+        curr.fill_out_despite_providing_resume();
+        try {
+            employed = curr.submit();
+        } catch (const std::system_error &e) {
+            std::cerr &lt;&lt; e.what() &lt;&lt; '\n';
+            continue;
+        }
+    }
+    return 0;
 }</code></pre>
 							<ul class="actions">
 								<li><a href="#one" class="button scrolly">Learn more</a></li>
